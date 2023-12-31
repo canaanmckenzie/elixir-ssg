@@ -1,4 +1,6 @@
+
 defmodule QuantNotes do
+  alias QuantNotes.Blog
   use Phoenix.Component
   import Phoenix.HTML
 
@@ -6,7 +8,12 @@ defmodule QuantNotes do
   def post(assigns) do
     ~H"""
     <.layout>
+    <div class="article">
+    <h1 class="text-3xl font-bold"><%= @post.title %></h1>
+    <div class="article-content">
     <%= raw @post.body %>
+    </div>
+    </div>
     </.layout>
     """
   end
@@ -15,13 +22,14 @@ defmodule QuantNotes do
   def index(assigns) do
     ~H"""
     <.layout>
-    <h1>Xavaav</h1>
-    <h2>Writings</h2>
+    <div class="article">
+    <h1 class="text-3xl font-bold underline">Writings</h1>
     <ul>
     <li :for={post <- @posts}>
-    <a href="{post.path}"><%=post.title%></a>
+    <a class="bg-green-300 border-green-600 border-b rounded" href={post.path}><%=post.title%></a>
     </li>
     </ul>
+    </div>
     </.layout>
     """
   end
@@ -30,6 +38,10 @@ defmodule QuantNotes do
   def layout(assigns) do
     ~H"""
     <html>
+    <head>
+    <link rel="stylesheet" href="/assets/app.css"/>
+    <script type="text/javascript" src="/assets/app.js" />
+    </head>
     <body>
     <%=render_slot(@inner_block)%>
     </body>
@@ -45,7 +57,7 @@ defmodule QuantNotes do
   def build() do
     posts = Blog.all_posts()
 
-    render_file("index.html",index(%{posts: posts}))
+    render_file("index.html", index(%{posts: posts}))
 
     for post <- posts do
       dir = Path.dirname(post.path)

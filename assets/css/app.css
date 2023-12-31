@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.article {
+    display: flex;
+    max-width: 40rem;
+    margin: auto;
+    padding: 1.5rem;
+
+}
+.article-content {
+    margin: auto;
+}
