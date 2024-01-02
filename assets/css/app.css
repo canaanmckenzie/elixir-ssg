@@ -2,11 +2,4 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-body{
-   /* margin: 0 auto;*/
-}
-.article {
-    max-width: 600px;
-    margin: auto;
 
-}

@@ -8,12 +8,12 @@ defmodule QuantNotes do
   def post(assigns) do
     ~H"""
     <.layout>
-    <div class="flex items-center justify-center h-screen">
-     <div class="article">
+    <div class="p-6 max-w-md mx-auto flex items-center">
+     <div class="shrink-0">
       <div class="article-header mb-4">
        <h1 class="text-3xl font-bold"><%= @post.title %></h1>
       </div>
-      <div class="article-content">
+      <div class="max-w-md mx-auto">
        <%= raw @post.body %>
       </div>
      </div>
@@ -26,15 +26,22 @@ defmodule QuantNotes do
   def index(assigns) do
     ~H"""
     <.layout>
-    <div class="flex items-center justify-center h-screen">
-     <div class="article">
-      <div class="article-header mb-4">
-       <h1 class="text-3xl font-bold underline">Writings</h1>
+    <div class="p-6 max-w-md mx-auto flex items-center">
+     <div class="shrink-0">
+      <div class="mb-4">
+       <h1 class="text-3xl font-bold">Writings</h1>
       </div>
-      <div class="article-content">
+      <div class="max-w-md mx-auto">
        <ul>
-        <li :for={post <- @posts}>
-          <a class="bg-green-300 border-green-600 border-b rounded" href={post.path}><%=post.title%></a>
+       <li :for={post <- @posts}>
+       <div class="flex items-center">
+       <div class="text-xs text-slate-600"><%=post.date%></div>
+       <div class="p-2">
+          <a class="bg-yellow-300 border-yellow-600 border-b rounded" href={post.path}>
+          <%=post.title%>
+          </a>
+        </div>
+       </div>
         </li>
       </ul>
      </div>
