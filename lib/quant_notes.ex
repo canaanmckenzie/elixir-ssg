@@ -8,15 +8,26 @@ defmodule QuantNotes do
   def post(assigns) do
     ~H"""
     <.layout>
-    <div class="p-6 max-w-md mx-auto flex items-center">
-     <div class="shrink-0">
-      <div class="article-header mb-4">
-       <h1 class="text-3xl font-bold"><%= @post.title %></h1>
-      </div>
-      <div class="max-w-md mx-auto">
-       <%= raw @post.body %>
-      </div>
-     </div>
+    <div class="mt-10 w-1/2 px-8 mx-auto text-wrap flex-wrap items-center">
+    <.header></.header>
+    <div class="mx-auto shrink-0">
+    <div class="text-center article-header mb-4"><h1 class="text-4xl font-bold"><%= @post.title %></h1></div>
+    <div class="mb-2 flex items-end">
+    <div class="pr-2">
+    <div class="mb-auto">
+    <%=@post.author%>&middot
+    </div>
+    </div>
+    <div class="text-slate-600">
+    <%=@post.date%> |
+    </div>
+    <div class="px-2 text-slate-400">
+    <%= for tag <- @post.tags do %>
+    <%=tag%><%end%>
+    </div>
+    </div>
+    <div><%=raw @post.body %></div>
+    </div>
     </div>
     </.layout>
     """
@@ -26,28 +37,43 @@ defmodule QuantNotes do
   def index(assigns) do
     ~H"""
     <.layout>
-    <div class="p-6 max-w-md mx-auto flex items-center">
-     <div class="shrink-0">
-      <div class="mb-4">
-       <h1 class="text-3xl font-bold">Writings</h1>
-      </div>
-      <div class="max-w-md mx-auto">
-       <ul>
-       <li :for={post <- @posts}>
-       <div class="flex items-center">
-       <div class="text-xs text-slate-600"><%=post.date%></div>
-       <div class="p-2">
-          <a class="bg-yellow-300 border-yellow-600 border-b rounded" href={post.path}>
-          <%=post.title%>
-          </a>
-        </div>
-       </div>
-        </li>
-      </ul>
+    <div class="mt-10 w-1/2 px-8 mx-auto overflow-auto items-center">
+    <.header></.header>
+    <div>Hi, I'm Canaan, \(\chi\alpha\nu\alpha\alpha\nu\) (Greek). I focus on Type, as in Typography, and in Type Theory, and work on text processing and digital typography for all the languages around the world.
+    </div>
+    <div class="flex">
+    <div class="shrink-0">
+     <div class="mb-4">
+     <div class="mb-4"></div>
+     <h1 class="text-2xl font-bold">Writings</h1>
+     </div>
+     <div class="pl-10">
+     <ul>
+     <li :for={post <- @posts}>
+     <div class="flex items-center">
+      <div class="text-xs dark:text-slate-400"><%=post.date%></div>
+      <a class="px-7 underline hover:underline" href={post.path}>
+     <%=post.title%>
+     </a>
+     </div>
+     </li>
+     </ul>
      </div>
     </div>
     </div>
+    </div>
     </.layout>
+    """
+  end
+
+  def header(assigns) do
+    ~H"""
+    <div class="items-center p-4">
+    <a href="/" title="home">
+    <h1 class="mb-8 text-4xl font-bold text-center">\(\chi\alpha\nu\alpha\alpha\nu\).io
+    </h1>
+    </a>
+    </div>
     """
   end
 
@@ -56,10 +82,13 @@ defmodule QuantNotes do
     ~H"""
     <html>
     <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="/assets/app.css"/>
+    <link rel="stylesheet" href="/assets/theme.css"/>
     <script type="text/javascript" src="/assets/app.js" />
     </head>
-    <body>
+    <body class="antialiased bg-sumiblack dark:bg-sumiblack dark:text-pearl">
     <%=render_slot(@inner_block)%>
     </body>
     </html>
@@ -75,6 +104,7 @@ defmodule QuantNotes do
     posts = Blog.all_posts()
 
     render_file("index.html", index(%{posts: posts}))
+    render_file("assets/theme.css",Makeup.stylesheet(:native_style,"makeup")) #render code blocks
 
     for post <- posts do
       dir = Path.dirname(post.path)

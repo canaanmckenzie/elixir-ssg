@@ -1,24 +1,61 @@
 <html>
 <head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="/assets/app.css">
+<link rel="stylesheet" href="/assets/theme.css">
 <script type="text/javascript" src="/assets/app.js"></script>
 </head>
-<body>
+<body class="antialiased bg-sumiblack dark:bg-sumiblack dark:text-pearl">
 
-<div class="p-6 max-w-md mx-auto flex items-center">
- <div class="shrink-0">
-  <div class="article-header mb-4">
-   <h1 class="text-3xl font-bold">Bell State Interlude</h1>
-  </div>
-  <div class="max-w-md mx-auto">
-   <h2>
+<div class="mt-10 w-1/2 px-8 mx-auto text-wrap flex-wrap items-center">
+<div class="items-center p-4">
+<a href="/" title="home">
+<h1 class="mb-8 text-4xl font-bold text-center">\(\chi\alpha\nu\alpha\alpha\nu\).io
+</h1>
+</a>
+</div>
+<div class="mx-auto shrink-0">
+<div class="text-center article-header mb-4"><h1 class="text-4xl font-bold">Bell State Interlude</h1></div>
+<div class="mb-2 flex items-end">
+<div class="pr-2">
+<div class="mb-auto">
+Canaan&middot
+</div>
+</div>
+<div class="text-slate-600">
+2023-12-27 |
+</div>
+<div class="px-2 text-slate-400">
+
+intro
+</div>
+</div>
+<div><h2>
 Hello</h2>
 <p>
 testing</p>
-<pre><code class="makeup elixir"><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span></code></pre>
+<pre><code class="makeup elixir"><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="w">
 
-  </div>
- </div>
+  </span><span class="c1"># collect and render data</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">build</span><span class="p" data-group-id="7186128360-1">(</span><span class="p" data-group-id="7186128360-1">)</span><span class="w"> </span><span class="k" data-group-id="7186128360-2">do</span><span class="w">
+    </span><span class="n">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Blog</span><span class="o">.</span><span class="n">all_posts</span><span class="p" data-group-id="7186128360-3">(</span><span class="p" data-group-id="7186128360-3">)</span><span class="w">
+
+    </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-4">(</span><span class="s">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p" data-group-id="7186128360-5">(</span><span class="p" data-group-id="7186128360-6">%{</span><span class="ss">posts</span><span class="p">:</span><span class="w"> </span><span class="n">posts</span><span class="p" data-group-id="7186128360-6">}</span><span class="p" data-group-id="7186128360-5">)</span><span class="p" data-group-id="7186128360-4">)</span><span class="w">
+    </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-7">(</span><span class="s">&quot;assets/theme.css&quot;</span><span class="p">,</span><span class="nc">Makeup</span><span class="o">.</span><span class="n">stylesheet</span><span class="p" data-group-id="7186128360-8">(</span><span class="ss">:perldoc_style</span><span class="p">,</span><span class="s">&quot;makeup&quot;</span><span class="p" data-group-id="7186128360-8">)</span><span class="p" data-group-id="7186128360-7">)</span><span class="w"> </span><span class="c1">#render code blocks</span><span class="w">
+
+    </span><span class="k">for</span><span class="w"> </span><span class="n">post</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">posts</span><span class="w"> </span><span class="k" data-group-id="7186128360-9">do</span><span class="w">
+      </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Path</span><span class="o">.</span><span class="n">dirname</span><span class="p" data-group-id="7186128360-10">(</span><span class="n">post</span><span class="o">.</span><span class="n">path</span><span class="p" data-group-id="7186128360-10">)</span><span class="w">
+      </span><span class="k">if</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="k" data-group-id="7186128360-11">do</span><span class="w">
+        </span><span class="nc">File</span><span class="o">.</span><span class="n">mkdir_p!</span><span class="p" data-group-id="7186128360-12">(</span><span class="nc">Path</span><span class="o">.</span><span class="n">join</span><span class="p" data-group-id="7186128360-13">(</span><span class="p" data-group-id="7186128360-14">[</span><span class="na">@output_dir</span><span class="p">,</span><span class="n">dir</span><span class="p" data-group-id="7186128360-14">]</span><span class="p" data-group-id="7186128360-13">)</span><span class="p" data-group-id="7186128360-12">)</span><span class="w">
+      </span><span class="k" data-group-id="7186128360-11">end</span><span class="w">
+      </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-15">(</span><span class="n">post</span><span class="o">.</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">post</span><span class="p" data-group-id="7186128360-16">(</span><span class="p" data-group-id="7186128360-17">%{</span><span class="ss">post</span><span class="p">:</span><span class="w"> </span><span class="n">post</span><span class="p" data-group-id="7186128360-17">}</span><span class="p" data-group-id="7186128360-16">)</span><span class="p" data-group-id="7186128360-15">)</span><span class="w">
+    </span><span class="k" data-group-id="7186128360-9">end</span><span class="w">
+    </span><span class="ss">:ok</span><span class="w">  </span><span class="c1"># potentially need error handling here if file can&#39;t be read etc..</span><span class="w">
+  </span><span class="k" data-group-id="7186128360-2">end</span><span class="w">
+</span></code></pre>
+</div>
+</div>
 </div>
 
 </body>

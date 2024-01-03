@@ -9,6 +9,9 @@ module.exports = {
     ],
 
   theme: {
-      extend: {},
-   }
+      colors: {
+          'sumiblack' : '#101416',
+          'pearl': '#dfe3e6',
+      },
+   },
 };
