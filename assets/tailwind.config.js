@@ -12,6 +12,7 @@ module.exports = {
       colors: {
           'sumiblack' : '#101416',
           'pearl': '#dfe3e6',
+          'neonblue': '#01F9C6',
       },
    },
 };

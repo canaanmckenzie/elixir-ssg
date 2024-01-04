@@ -39,30 +39,41 @@ defmodule QuantNotes do
     <.layout>
     <div class="mt-10 w-1/2 px-8 mx-auto overflow-auto items-center">
     <.header></.header>
-    <div>Hi, I'm Canaan, \(\chi\alpha\nu\alpha\alpha\nu\) (Greek). I focus on Type, as in Typography, and in Type Theory, and work on text processing and digital typography for all the languages around the world.
+
+    <div class="mb-6">Hi, I'm Canaan, \(\chi\alpha\nu\alpha\alpha\nu\) (Greek). I focus on Type, as in Typography, and in Type Theory, and work on text processing and digital typography for all the languages around the world.
     </div>
+
     <div class="flex">
     <div class="shrink-0">
+
      <div class="mb-4">
-     <div class="mb-4"></div>
      <h1 class="text-2xl font-bold">Writings</h1>
      </div>
+
      <div class="pl-10">
+
      <ul>
      <li :for={post <- @posts}>
+
      <div class="flex items-center">
-      <div class="text-xs dark:text-slate-400"><%=post.date%></div>
-      <a class="px-7 underline hover:underline" href={post.path}>
+     <div class="text-xs dark:text-slate-400"><%=post.date%></div>
+
+     <a class="px-7 underline decoration-0 hover:decoration-neonblue" href={post.path}>
      <%=post.title%>
      </a>
+
      </div>
+
+
      </li>
      </ul>
      </div>
-    </div>
-    </div>
-    </div>
-    </.layout>
+
+
+     </div>
+     </div>
+     </div>
+     </.layout>
     """
   end
 
