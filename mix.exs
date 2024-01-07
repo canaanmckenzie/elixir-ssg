@@ -3,16 +3,17 @@ defmodule QuantNotes.MixProject do
 
   def project do
     [
+
       app: :quant_notes,
       version: "0.1.0",
-      elixir: "~> 1.15",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
+  # Run "mix help compile.app" to learn aboyut applications.
   def application do
     [
       extra_applications: [:logger]
@@ -34,7 +35,8 @@ defmodule QuantNotes.MixProject do
       {:makeup_erlang, ">= 0.0.0"},
       {:phoenix_live_view, "~>0.18.12"},
       {:esbuild, "~> 0.5"},
-      {:tailwind, "~>0.1.8"}
+      {:tailwind, "~>0.1.8"},
+      {:sourceror,"~> 0.12.2"}
 
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}

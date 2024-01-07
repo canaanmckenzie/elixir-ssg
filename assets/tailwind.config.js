@@ -13,6 +13,7 @@ module.exports = {
           'sumiblack' : '#101416',
           'pearl': '#dfe3e6',
           'neonblue': '#01F9C6',
+          'gray': '#808080',
       },
    },
 };

@@ -6,18 +6,18 @@ Multidisciplinary engineer and software developer. Curently building
 #### Technical Skills
 
     - Elixir
-    - Phoenix LiveView
-    - Ecto
-    - Python
-    - C
+    - Phoenix
     - React
+    - Python
+    - Tailwind CSS
+    - Ecto
+    - vanilla JS
     - Haskell
-    - Vue
-
+    - PostgreSQL
 ### Projects
 
 ### Experience
 
 Freelance Software devloper - 2023 - Present
 
-    - Build 
+    - Build

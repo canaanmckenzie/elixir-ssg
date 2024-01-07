@@ -13,3 +13,4 @@ defmodule QuantNotes.Blog do
   # export them
   def all_posts, do: @posts
 end
+

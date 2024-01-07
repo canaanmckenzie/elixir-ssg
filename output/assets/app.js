@@ -1,1 +1,1 @@
-(()=>{})();
+(()=>{document.addEventListener("DOMContentLoaded",function(){var t=document.getElementById("myCanvas"),e=t.getContext("2d"),n=0;function a(){for(e.clearRect(0,0,t.width,t.height),e.width=88,X=8;X--;)for(Y=8;Y--;){var r=d(n/2*Y^X*n/2);e.fillRect(X,Y,r,r)}for(i=30;i--;)e.drawImage(t,i%3?8:0,i%2?8:0);n+=.05,requestAnimationFrame(a)}a()});function d(t){return Math.sin(t)}})();

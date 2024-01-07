@@ -4,56 +4,54 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="/assets/app.css">
 <link rel="stylesheet" href="/assets/theme.css">
-<script type="text/javascript" src="/assets/app.js"></script>
+<!--<script type="text/javascript" src="/assets/app.js" />-->
 </head>
-<body class="antialiased bg-sumiblack dark:bg-sumiblack dark:text-pearl">
+<body class="text-xl antialiased bg-pearl dark:pearl dark:text-sumiBlack">
 
-<div class="mt-10 w-1/2 px-8 mx-auto text-wrap flex-wrap items-center">
-<div class="items-center p-4">
-<a href="/" title="home">
-<h1 class="mb-8 text-4xl font-bold text-center">\(\chi\alpha\nu\alpha\alpha\nu\).io
-</h1>
-</a>
+<div class="w-8/12 mx-auto mb-4">
+<a href="/" class="no-underline hover:underline text-gray border border-gray dark:border dark:border-gray">\(\chi\alpha\nu\alpha\alpha\nu\)</a>
 </div>
-<div class="mx-auto shrink-0">
-<div class="text-center article-header mb-4"><h1 class="text-4xl font-bold">Bell State Interlude</h1></div>
-<div class="mb-2 flex items-end">
-<div class="pr-2">
-<div class="mb-auto">
-Canaan&middot
+<div class="w-3/5 px-8 mx-auto text-wrap flex-wrap items-center">
+<div class="ml-14 mt-16">
+<div class="flex">
+
+<div class="text-s mt-24 items-baseline pr-8">
+
+<div class="items-baseline">
+2023-12-27
 </div>
-</div>
-<div class="text-slate-600">
-2023-12-27 |
-</div>
-<div class="px-2 text-slate-400">
+
+<div class="text-gray">
 
 intro
 </div>
+
 </div>
-<div><h2>
+
+<div class="post-content ml-30">
+<div class=" border-t-4 mb-8 mt-4"><h1 class="text-4xl">Bell State Interlude</h1>
+</div>
+<div class="overflow-y-auto text-wrap"><h2>
 Hello</h2>
 <p>
 testing</p>
-<pre><code class="makeup elixir"><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="w">
+<pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">Parallel</span><span class="w"> </span><span class="k" data-group-id="9669883114-1">do</span><span class="w">
+    </span><span class="kd">def</span><span class="w"> </span><span class="nf">pmap</span><span class="w"> </span><span class="p" data-group-id="9669883114-2">(</span><span class="n">collection</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="p" data-group-id="9669883114-2">)</span><span class="w"> </span><span class="k" data-group-id="9669883114-3">do</span><span class="w">
+    </span><span class="n">collection</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Enum</span><span class="o">.</span><span class="n">map</span><span class="p" data-group-id="9669883114-4">(</span><span class="o">&amp;</span><span class="p" data-group-id="9669883114-5">(</span><span class="nc">Task</span><span class="o">.</span><span class="n">async</span><span class="p" data-group-id="9669883114-6">(</span><span class="k" data-group-id="9669883114-7">fn</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">func</span><span class="o">.</span><span class="p" data-group-id="9669883114-8">(</span><span class="ni">&amp;1</span><span class="p" data-group-id="9669883114-8">)</span><span class="w"> </span><span class="k" data-group-id="9669883114-7">end</span><span class="p" data-group-id="9669883114-6">)</span><span class="p" data-group-id="9669883114-5">)</span><span class="p" data-group-id="9669883114-4">)</span><span class="w">
+    </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Enum</span><span class="o">.</span><span class="n">map</span><span class="p" data-group-id="9669883114-9">(</span><span class="o">&amp;</span><span class="nc">Task</span><span class="o">.</span><span class="n">await</span><span class="o">/</span><span class="mi">1</span><span class="p" data-group-id="9669883114-9">)</span><span class="w">
+    </span><span class="k" data-group-id="9669883114-3">end</span><span class="w">
+</span><span class="k" data-group-id="9669883114-1">end</span></code></pre>
+<p>
+running this function to get the squares of 1..1000</p>
+<pre><code class="makeup elixir"><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Parallel</span><span class="o">.</span><span class="n">pmap</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p" data-group-id="4411111011-1">(</span><span class="ni">&amp;1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="ni">&amp;1</span><span class="p" data-group-id="4411111011-1">)</span></code></pre>
+<p>
+started 1,000 background processes</p>
 
-  </span><span class="c1"># collect and render data</span><span class="w">
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">build</span><span class="p" data-group-id="7186128360-1">(</span><span class="p" data-group-id="7186128360-1">)</span><span class="w"> </span><span class="k" data-group-id="7186128360-2">do</span><span class="w">
-    </span><span class="n">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Blog</span><span class="o">.</span><span class="n">all_posts</span><span class="p" data-group-id="7186128360-3">(</span><span class="p" data-group-id="7186128360-3">)</span><span class="w">
+</div>
 
-    </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-4">(</span><span class="s">&quot;index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p" data-group-id="7186128360-5">(</span><span class="p" data-group-id="7186128360-6">%{</span><span class="ss">posts</span><span class="p">:</span><span class="w"> </span><span class="n">posts</span><span class="p" data-group-id="7186128360-6">}</span><span class="p" data-group-id="7186128360-5">)</span><span class="p" data-group-id="7186128360-4">)</span><span class="w">
-    </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-7">(</span><span class="s">&quot;assets/theme.css&quot;</span><span class="p">,</span><span class="nc">Makeup</span><span class="o">.</span><span class="n">stylesheet</span><span class="p" data-group-id="7186128360-8">(</span><span class="ss">:perldoc_style</span><span class="p">,</span><span class="s">&quot;makeup&quot;</span><span class="p" data-group-id="7186128360-8">)</span><span class="p" data-group-id="7186128360-7">)</span><span class="w"> </span><span class="c1">#render code blocks</span><span class="w">
+</div>
 
-    </span><span class="k">for</span><span class="w"> </span><span class="n">post</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">posts</span><span class="w"> </span><span class="k" data-group-id="7186128360-9">do</span><span class="w">
-      </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Path</span><span class="o">.</span><span class="n">dirname</span><span class="p" data-group-id="7186128360-10">(</span><span class="n">post</span><span class="o">.</span><span class="n">path</span><span class="p" data-group-id="7186128360-10">)</span><span class="w">
-      </span><span class="k">if</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="k" data-group-id="7186128360-11">do</span><span class="w">
-        </span><span class="nc">File</span><span class="o">.</span><span class="n">mkdir_p!</span><span class="p" data-group-id="7186128360-12">(</span><span class="nc">Path</span><span class="o">.</span><span class="n">join</span><span class="p" data-group-id="7186128360-13">(</span><span class="p" data-group-id="7186128360-14">[</span><span class="na">@output_dir</span><span class="p">,</span><span class="n">dir</span><span class="p" data-group-id="7186128360-14">]</span><span class="p" data-group-id="7186128360-13">)</span><span class="p" data-group-id="7186128360-12">)</span><span class="w">
-      </span><span class="k" data-group-id="7186128360-11">end</span><span class="w">
-      </span><span class="n">render_file</span><span class="p" data-group-id="7186128360-15">(</span><span class="n">post</span><span class="o">.</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">post</span><span class="p" data-group-id="7186128360-16">(</span><span class="p" data-group-id="7186128360-17">%{</span><span class="ss">post</span><span class="p">:</span><span class="w"> </span><span class="n">post</span><span class="p" data-group-id="7186128360-17">}</span><span class="p" data-group-id="7186128360-16">)</span><span class="p" data-group-id="7186128360-15">)</span><span class="w">
-    </span><span class="k" data-group-id="7186128360-9">end</span><span class="w">
-    </span><span class="ss">:ok</span><span class="w">  </span><span class="c1"># potentially need error handling here if file can&#39;t be read etc..</span><span class="w">
-  </span><span class="k" data-group-id="7186128360-2">end</span><span class="w">
-</span></code></pre>
 </div>
 </div>
 </div>
