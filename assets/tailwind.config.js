@@ -14,6 +14,9 @@ module.exports = {
           'pearl': '#dfe3e6',
           'neonblue': '#01F9C6',
           'gray': '#808080',
+          'white': '#FBFAF5',
+          'tyrianPurple':'#66023C',
+          'tekheletBlue':'#075299 ',
       },
    },
 };

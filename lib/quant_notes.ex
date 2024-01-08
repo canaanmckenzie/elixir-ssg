@@ -9,10 +9,10 @@ defmodule QuantNotes do
     <.layout>
     <.header></.header>
     <div class="w-3/5 px-8 mx-auto text-wrap flex-wrap items-center">
-    <div class="ml-14 mt-16">
+    <div class="ml-10 mt-16">
     <div class="flex">
 
-    <div class="text-s mt-24 items-baseline pr-8">
+    <div class="text-s text-gray mt-24 items-baseline pr-8">
 
     <div class="items-baseline">
     <%=@post.date%>
@@ -46,13 +46,15 @@ defmodule QuantNotes do
     <.layout>
     <.header></.header>
     <div class="w-3/5 px-8 mx-auto items-center">
-    <div class="flex ml-40 mt-20">
+    <div class="flex ml-36 mt-24">
     <div class="shrink-0">
 
      <div class="pl-30">
      <ul>
      <div class="border-b-2 mb-6">
-      <li class="mb-6"><a class="mb-4 text-3xl pr-2 no-underline decoration-2 hover:underline" href="/about.html">about me</a></li>
+      <li class="mb-6"><a class="mb-8 text-3xl pr-2 no-underline decoration-2 hover:underline" href="/about.html">about me</a></li>
+
+      <li class="mb-6"><a class="mb-8 text-3xl pr-2 no-underline decoration-2 hover:underline" href="/CanaanMcKenzie2024BlogVersion.pdf">cv & résumé</a></li>
       </div>
      <li :for={post <- @posts}>
 
@@ -76,7 +78,7 @@ defmodule QuantNotes do
   def header(assigns) do
     ~H"""
     <div class="w-8/12 mx-auto mb-4">
-    <a href="/" class="no-underline hover:underline text-gray border border-gray dark:border dark:border-gray">\(\chi\alpha\nu\alpha\alpha\nu\)</a>
+    <a href="/" class="no-underline hover:underline text-tyrianPurple border border-tyrianPurple dark:border dark:border-tyrianPurple">:~$ </a>
     </div>
     """
   end
@@ -88,29 +90,32 @@ defmodule QuantNotes do
     <div class="w-3/5 px-8 mx-auto items-center">
     <div class="border-t-4 ml-40 mt-16">
     <h1 class="mb-4 text-4xl">about me</h1>
-    <p class="mb-4">Hi, I'm Canaan, "\(\chi\alpha\nu\alpha\alpha\nu\)", the sitename xavaav.io comes from a rough transliteration of the Greek.</p>
-
-    <p class="mb-4">I'm a mechanical engineer turned chemist, turned software developer. Welcome to my small corner of the Internet.</p>
-
-    <p class="mb-4">I work with and write about <s>crypto</s>cryptography, fault-tolerant distributed systems, and machine learning. My notes/stories/work around other topics that interest me will (frequently) interject themselves here.</p>
+    <p class="mb-4">My name is Canaan McKenzie.</p>
+    <p class="mb-4"> I'm a mechanical engineer turned chemist, turned software engineer. Welcome to my small corner of the Internet.</p>
+    <p class="mb-4">I work with and write about crypto(graphy), distributed networks, and data.</p>
+    <p class="mb-4"> My notes/stories/work around other topics that interest me will (frequently) interject themselves here.</p>
     </div>
     </div>
     </.layout>
     """
   end
 
-  # layout from phoenix 
+  # layout from phoenix
   def layout(assigns) do
     ~H"""
-    <html>
+    <html lang="en">
     <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A place to keep my writing">
+    <title>Xavaav</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="/assets/app.css"/>
     <link rel="stylesheet" href="/assets/theme.css"/>
     <!--<script type="text/javascript" src="/assets/app.js" />-->
     </head>
-    <body class="text-xl antialiased bg-pearl dark:pearl dark:text-sumiBlack">
+    <body class="text-2xl antialiased bg-white dark:bg-white dark:text-sumiBlack">
     <%=render_slot(@inner_block)%>
     </body>
     </html>
