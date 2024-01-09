@@ -1,8 +1,11 @@
 # QuantNotes
 
 **TODO:
+
     - customize makeup syntax highlighting
-    - refactor HEEx**
+    - refactor HEEx
+    - break out reading list/rating fn
+**
 
 ## Installation
 
