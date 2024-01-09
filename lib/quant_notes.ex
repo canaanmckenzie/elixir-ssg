@@ -91,14 +91,17 @@ defmodule QuantNotes do
     <div class="border-t-4 ml-40 mt-16">
     <h1 class="mb-4 text-4xl">about me</h1>
     <p class="mb-4">My name is Canaan McKenzie.</p>
-    <p class="mb-4"> I'm a mechanical engineer turned chemist, turned software engineer. Welcome to my small corner of the Internet.</p>
+    <p class="mb-4"> I'm a mechanical engineer turned chemist, turned software engineer. Welcome to my small corner of the internet.</p>
     <p class="mb-4">I work with and write about crypto(graphy), distributed networks, and data.</p>
     <p class="mb-4"> My notes/stories/work around other topics that interest me will (frequently) interject themselves here.</p>
+    <h2 class="text-bold text-3x1">Colophon</h2>
+    <p class="mb-4">This site is generated extremely simply from a small static site generator built with Elixir, Phoenix, and Tailwind CSS that can be found <a href="/" class="underline dark:underline decoration-2">here</a>.</p>
     <h2 class="text-bold text-3xl">reading list</h2>
     <ul class=" text-xl list-disc ml-12 italic">
-    <li>The Complete Fiction of H. P. Lovecraft ~ S. T. Joshi &starf;&starf;&starf;</li>
-    <li>Le rouge et le noir ~ Stendhal &starf;&starf;</li>
-    <li>Razor Girl ~ Carl Hiaasen &starf;&starf;&starf;&starf;</li>
+    <li>The Complete Fiction of H. P. Lovecraft - S. T. Joshi &starf;&starf;&starf;</li>
+    <li>Le rouge et le noir - Stendhal &starf;&starf;</li>
+    <li>Razor Girl - Carl Hiaasen &starf;&starf;&starf;</li>
+    <li>Oryx and Crake - Margaret Atwood &starf;&starf;&starf;&starf;</li>
     </ul>
     </div>
     </div>
@@ -106,12 +109,9 @@ defmodule QuantNotes do
     """
   end
    # the book ratings
- # defp stars(n) do
- #    String.duplicate(
- #   ~H"""
-#     &starf;
-#     """,n)
-#  end
+  defp stars(n) do
+     String.duplicate(~s(&starf;), n)
+   end
 
   # layout from phoenix
   def layout(assigns) do
