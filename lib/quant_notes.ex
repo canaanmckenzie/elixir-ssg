@@ -102,6 +102,7 @@ defmodule QuantNotes do
     <ul class=" text-xl list-disc ml-12 italic">
     <li>The Complete Collection of H. P. Lovecraft (current)</li>
     <li>Razor Girl - Carl Hiaasen &starf;&starf;&starf;</li>
+    <li>A Canticle for Leibowitz &starf;&starf;</li>
     <li>Le rouge et le noir - Stendhal &starf;&starf;</li>
     <li>Oryx and Crake - Margaret Atwood  &starf;&starf;&starf;&starf;</li>
     </ul>
