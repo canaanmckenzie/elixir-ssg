@@ -1,6 +1,8 @@
 # QuantNotes
 
-**TODO: Add description**
+**TODO:
+    - customize makeup syntax highlighting
+    - refactor HEEx**
 
 ## Installation
 
