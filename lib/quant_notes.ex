@@ -78,7 +78,7 @@ defmodule QuantNotes do
   def header(assigns) do
     ~H"""
     <div class="w-8/12 mx-auto mb-4">
-    <a href="/" class="no-underline hover:underline text-tyrianPurple border-1 border-r border-b border-tyrianPurple dark:border-l dark:border-r dark:border-b dark:border-tyrianPurple">:~$ </a>
+    <a href="/" class="no-underline hover:underline border-1 border-r-2 border-b-2 dark:border-l dark:border-r dark:border-b">[xavaav.io ~]$</a>
     </div>
     """
   end
@@ -100,6 +100,7 @@ defmodule QuantNotes do
     <p class="mb-4">The sitename xavaav.io is a rough transliteration of my first name written in Greek, \(\chi\alpha\nu\alpha\alpha\nu\).</p></div>
     <h2 class="text-bold text-4xl mb-12">reading list</h2>
     <ul class=" text-xl list-disc ml-12 italic">
+    <li>Noor - Nnedi Okorafor (queued)</li>
     <li>The Complete Collection of H. P. Lovecraft (current)</li>
     <li>Razor Girl - Carl Hiaasen &starf;&starf;&starf;</li>
     <li>A Canticle for Leibowitz - Walter M. Miller, Jr. &starf;&starf;</li>
@@ -124,7 +125,7 @@ defmodule QuantNotes do
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A place to keep my writing">
-    <title>Xavaav</title>
+    <title>[xavaav.io ~]$</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="/assets/app.css"/>
